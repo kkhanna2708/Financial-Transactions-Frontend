@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Test coverage
+coverage/
+
+# Environment (keep .env.example and .env.mocks — they are committed on purpose)
+.env
+.env.*
+!.env.example
+!.env.mocks
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Claude Code local settings (pipeline-log.md is kept)
+.claude/settings.local.json

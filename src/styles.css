@@ -1,0 +1,87 @@
+/* Bootstrap 5 provides the base look; this file only holds app-specific touches. */
+
+body {
+  background: #f4f6f9;
+}
+
+.money {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Status badge: colour + glyph + text, so status never relies on colour alone. */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status-badge--PENDING { background: #fff3cd; color: #664d03; }
+.status-badge--PROCESSING { background: #cfe2ff; color: #084298; }
+.status-badge--RETRY { background: #ffe5d0; color: #8a4b00; }
+.status-badge--SUCCESS { background: #d1e7dd; color: #0f5132; }
+.status-badge--FAILED { background: #f8d7da; color: #842029; }
+
+/* Stat cards get a coloured accent bar matching the status badge palette. */
+.stat-card {
+  border: 0;
+  border-left: 4px solid var(--accent, #6c757d);
+}
+
+.stat-card--PENDING { --accent: #ffc107; }
+.stat-card--PROCESSING { --accent: #0d6efd; }
+.stat-card--RETRY { --accent: #fd7e14; }
+.stat-card--SUCCESS { --accent: #198754; }
+.stat-card--FAILED { --accent: #dc3545; }
+
+.stat-card__count {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.txn-id {
+  max-width: 11rem;
+}
+
+.failure {
+  font-size: 0.8em;
+  max-width: 16rem;
+}
+
+.timeline {
+  border-left: 2px solid #dee2e6;
+  padding-left: 1rem;
+  margin-left: 0.5rem;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1rem - 6px);
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #adb5bd;
+}
+
+.refreshing-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #0d6efd;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.25; }
+}
